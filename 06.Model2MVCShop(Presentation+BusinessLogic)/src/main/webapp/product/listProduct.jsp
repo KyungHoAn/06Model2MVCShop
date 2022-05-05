@@ -125,7 +125,21 @@
 			<td align="left">${product.regDate}
 			</td>
 			<td></td>
-			<td align="left">${product.proTranCode}
+			<td align="left">
+			<c:if test="${param.menu eq 'manage'}">
+			${product.proTranCode }
+  			<%-- <c:choose>
+				<c:when test="${product.proTranCode eq '0'}">
+					판매중
+				</c:when>
+				<c:when test="${product.proTranCode eq '1'}">
+					<a href="/updateTranCode.do?prodNo=${product.prodNo}&tranCode=2">배송하기</a>
+				</c:when>
+				<c:when test="${product.proTranCode eq '2'}">
+					배송중
+				</c:when>
+			</c:choose>  --%>
+			</c:if>
 			</td>	
 		</tr>
 		<tr>
